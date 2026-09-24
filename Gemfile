@@ -1,13 +1,16 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
 gemspec
-# Add development and testing tools
+
 group :development, :test do
-  # ... (other tools like rspec, pry)
-  
-  # Core RuboCop gem
-  gem 'rubocop', '~> 1.0' 
-  
-  # Extensions for common Ruby idioms and performance checks
-  gem 'rubocop-performance'
-  gem 'rubocop-rails' # Good to include even for a general gem
+  gem 'activerecord', '>= 6.1'
+  gem 'pry'
+  gem 'rake', '~> 13.0'
+  gem 'rspec', '~> 3.13'
+  gem 'rubocop', '~> 1.72'
+  gem 'rubocop-performance', '~> 1.24'
+  gem 'rubocop-rails', '~> 2.30'
+  gem 'sqlite3', '>= 1.4'
 end

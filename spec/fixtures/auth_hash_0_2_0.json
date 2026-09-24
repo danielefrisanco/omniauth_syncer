@@ -1,0 +1,27 @@
+{
+  "provider": "ssoprovider",
+  "uid": "0b7e8a52-6c1d-4a39-9f41-2d7c5e1a9b30",
+  "info": { "name": "Alice Smith", "email": "alice@example.com" },
+  "extra": {
+    "raw_info": {
+      "id": "0b7e8a52-6c1d-4a39-9f41-2d7c5e1a9b30",
+      "sub": "0b7e8a52-6c1d-4a39-9f41-2d7c5e1a9b30",
+      "name": "Alice Smith",
+      "email": "alice@example.com",
+      "email_verified": false,
+      "roles": ["admin"]
+    },
+    "access_token": "eyJhbGciOiJSUzI1NiJ9.fixture.signature",
+    "refresh_token": null,
+    "expires_at": 1758200000,
+    "id_token": {
+      "sub": "0b7e8a52-6c1d-4a39-9f41-2d7c5e1a9b30",
+      "iss": "https://hub.example.com",
+      "aud": "client-app",
+      "nonce": "fixture-nonce"
+    },
+    "roles": ["admin"],
+    "email_verified": false,
+    "scope": ["openid", "profile", "email"]
+  }
+}

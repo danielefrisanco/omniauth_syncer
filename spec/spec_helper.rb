@@ -1,18 +1,22 @@
-# Include the current directory in the load path (necessary for Rubygems/Bundler)
-$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+# frozen_string_literal: true
 
-# Load the main gem file, which in turn loads the SyncService and Configuration
+require 'json'
+require 'omniauth'
 require 'omniauth_syncer'
-require 'ostruct' # Useful for mocking configuration objects
+
+Dir[File.join(__dir__, 'support', '**', '*.rb')].each { |file| require file }
 
 RSpec.configure do |config|
-  # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = '.rspec_status'
-
-  # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
+  config.order = :random
+  Kernel.srand config.seed
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  config.before do
+    OmniauthSyncer.reset_configuration!
   end
 end
